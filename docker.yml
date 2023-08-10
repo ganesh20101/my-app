@@ -17,7 +17,7 @@
 
     - name: Run the Linux command
       ansible.builtin.command:
-        cmd: docker build -t gane .
+        cmd: docker build -t ganes .
 
     - name: remove previous container
       ansible.builtin.command:
@@ -25,18 +25,9 @@
 
     - name: run docker 
       ansible.builtin.command:
-        cmd: docker run -itd --name prakash -p 8084:8080 gane
+        cmd: docker run -itd --name prakash -p 8084:8080 ganes
 
-    - name: exec docker1 
-      ansible.builtin.command:
-        cmd: docker exec -it prakash mv /usr/local/tomcat/webapps /usr/local/tomcat/webapps2
-
-    - name: exec docker2
-      ansible.builtin.command:
-        cmd: docker exec -it prakash mv /usr/local/tomcat/webapps.dist /usr/local/tomcat/webapps
-
-    - name: copy
-      shell: docker cp /home/ec2-user/newapp.war prakash:/usr/local/tomcat/webapps
+    
 
     
 
