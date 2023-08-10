@@ -1,0 +1,2 @@
+[ansible]
+13.54.49.62 ansible_user=ec2-user
