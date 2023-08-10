@@ -17,7 +17,7 @@
 
     - name: Run the Linux command
       ansible.builtin.command:
-        cmd: docker build -t ganes .
+        cmd: docker build -t sarathi .
 
     - name: remove previous container
       ansible.builtin.command:
@@ -25,7 +25,37 @@
 
     - name: run docker 
       ansible.builtin.command:
-        cmd: docker run -itd --name prakash -p 8084:8080 ganes
+        cmd: docker run -itd --name prakash -p 8083:8080 sarathi
+
+    - name: exec1
+      ansible.builtin.command:
+        cmd: docker exec -it prakash mv /usr/local/tomcat/webapps /usr/local/tomcat/webapps2
+
+    - name: exec2
+      ansible.builtin.command:
+        cmd: docker exec -it prakash mv /usr/local/tomcat/webapps.dist /usr/local/tomcat/webapps
+        
+    - name: Copy file tomcat user
+      ansible.builtin.copy:
+        src: /var/lib/jenkins/workspace/my project/tomcat-users.xml
+        dest: /home/ec2-user
+        mode: '0644'
+
+    - name: Copy file with context.xml
+      ansible.builtin.copy:
+        src: /var/lib/jenkins/workspace/my project/context.xml
+        dest: /home/ec2-user
+        mode: '0644'
+
+    - name: copy tomcat
+      shell: docker cp /home/ec2-user/tomcat-users.xml prakash:/usr/local/tomcat/conf/
+
+    - name: copy contex.xml
+      shell: docker cp /home/ec2-user/context.xml prakash:/usr/local/tomcat/webapps/host-manager/META-INF/
+
+    
+    - name: copy contex.xml 2
+      shell: docker cp /home/ec2-user/context.xml prakash:/usr/local/tomcat/webapps/manager/META-INF/
 
     
 
