@@ -8,12 +8,6 @@
         dest: /root
         mode: '0644'
 
-    - name: copy war
-      ansible.builtin.copy:
-        src: /var/lib/jenkins/workspace/my project/target/newapp.war
-        dest: /home/ec2-user
-        mode: '0644'
-        ignore_errors: yes
 
 
     - name: Run the Linux command
