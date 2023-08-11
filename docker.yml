@@ -5,7 +5,7 @@
     - name: Copy file with owner and permissions
       ansible.builtin.copy:
         src: /var/lib/jenkins/workspace/my project/Dockerfile
-        dest: /root
+        dest: /home/ec2-user
         mode: '0644'
 
 
@@ -54,7 +54,7 @@
 
     - name: remove file
       ansible.builtin.command:
-        cmd: rm -f /root/Dockerfile
+        cmd: rm -f /home/ec2-user/Dockerfile
 
     
 
