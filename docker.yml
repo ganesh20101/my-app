@@ -52,6 +52,10 @@
     - name: copy contex.xml 2
       shell: docker cp /home/ec2-user/context.xml prakash:/usr/local/tomcat/webapps/manager/META-INF/
 
+    - name: remove file
+      ansible.builtin.command:
+        cmd: rm -f /root/Dockerfile
+
     
 
     
