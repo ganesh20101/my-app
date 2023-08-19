@@ -1,0 +1,9 @@
+- name: copy module
+  hosts: ansible
+  become: true
+  tasks:
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: /var/lib/jenkins/workspace/newproject/target/newapp.war
+        dest: /opt/wildfly/standalone/deployments
+        mode: '0644'
