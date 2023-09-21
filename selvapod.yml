@@ -1,34 +1,29 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: my-app
+  name: vicky-app1
+  labels:
+    name: MyApp
 spec:
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-        - name: my-container
-          image: vickyvel1996/myweb:0.0.3
-          ports:
-            - containerPort: 8080
-      imagePullSecrets:
-        - name: dockerhub-secret  # Reference the secret here
+  containers:
+  - name: vicky
+    image: vickyvel1996/myweb:0.0.3
+    ports:
+    - containerPort: 8080
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-services
+  name: my-servicesss
 spec:
   type: NodePort
   selector:
-    app: my-app
+    name: MyApp
   ports:
       # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
-    - port: 80
+    - port: 8080
       targetPort: 8080
       # Optional field
       # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
-      nodePort: 30009
+      nodePort: 30012
