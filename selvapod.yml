@@ -12,7 +12,7 @@ spec:
         - name: my-container
           image: vickyvel1996/myweb:0.0.3
           ports:
-            - containerPort: 80
+            - containerPort: 8080
       imagePullSecrets:
         - name: dockerhub-secret  # Reference the secret here
 
