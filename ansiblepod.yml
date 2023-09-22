@@ -2,6 +2,11 @@
   hosts: ansible
   become: true
   tasks:
+    - name: copy module
+      copy:
+        src:  /var/lib/jenkins/workspace/pipeline/selvapod.yml
+        dest: /home/ec2-user
+        mode: "0644"
     - name: run script
       ansible.builtin.command:
-        cmd: kubectl apply -f /var/lib/jenkins/workspace/pipeline/selvapod.yml
+        cmd: kubectl apply -f /home/ec2-user/selvapod.yml
