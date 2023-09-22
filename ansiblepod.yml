@@ -1,0 +1,11 @@
+- name: copy module
+  hosts: ansible
+  become: true
+  tasks:
+    - name: Run the Linux command
+      ansible.builtin.command:
+      cmd: 
+        - kubectl
+        - apply
+        - -f
+        - /var/lib/jenkins/workspace/pipeline/selvapod.yml
