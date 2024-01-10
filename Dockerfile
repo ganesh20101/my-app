@@ -8,7 +8,7 @@ COPY tomcat-users.xml /usr/local/tomcat/conf/
 COPY context.xml /usr/local/tomcat/webapps/host-manager/META-INF/
 COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/
 
-COPY /var/lib/jenkins/workspace/pro@2/sample.war /usr/local/tomcat/webapps/
+COPY /sample.war /usr/local/tomcat/webapps/
 
 
 
