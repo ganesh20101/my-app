@@ -1,0 +1,8 @@
+- name: run 
+  hosts: localhost
+  become: true
+  tasks:
+    
+    - name: run script
+      ansible.builtin.command:
+        cmd: kubectl apply -f /var/lib/jenkins/workspace/my/selvapod.yml
