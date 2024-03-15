@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: vicky-app2
+  name: vicky-app22
   labels:
-    name: MyApps
+    name: MyAppss
 spec:
   containers:
   - name: vicky
-    image: ganesh20101/myweb:3.0.2
+    image: ganesh20101/java-app
     ports:
     - containerPort: 8080
   imagePullSecrets:
@@ -17,15 +17,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-services
+  name: my-servicess
 spec:
   type: NodePort
   selector:
-    name: MyApps
+    name: MyAppss
   ports:
       # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
     - port: 8080
       targetPort: 8080
       # Optional field
       # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
-      nodePort: 30013
+      nodePort: 30014
