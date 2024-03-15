@@ -1,5 +1,7 @@
 - name: run 
   hosts: localhost
+  connection: local
+  gather_facts: no
   become: true
   tasks:
     
