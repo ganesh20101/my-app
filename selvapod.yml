@@ -7,11 +7,11 @@ metadata:
 spec:
   containers:
   - name: vicky
-    image: vickyvel1996/myweb:0.0.5
+    image: ganesh20101/myweb:3.0.2
     ports:
     - containerPort: 8080
   imagePullSecrets:
-    - name: my-dockerhub-secret
+    - name: my-dockerhub-secrets
 
 ---
 apiVersion: v1
