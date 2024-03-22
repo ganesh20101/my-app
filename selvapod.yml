@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: vicky
-    image: ganesh20101/java-app
+    image: ganesh20101/selva-app
     ports:
     - containerPort: 8080
   imagePullSecrets:
