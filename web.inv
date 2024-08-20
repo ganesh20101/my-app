@@ -2,11 +2,9 @@
 13.235.132.113  ansible_user=ec2-user
 
 [win]
-172.16.2.5
-172.16.2.6
-
+192.168.10.143
 [win:vars]
-ansible_user=vagrant
-ansible_password=password
+ansible_user=SATVAT-P3
+ansible_password=Satvat@123
 ansible_connection=winrm
 ansible_winrm_server_cert_validation=ignore
