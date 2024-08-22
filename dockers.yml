@@ -9,8 +9,10 @@
         mode: '0644'
 
     - name: Install HTTPD package
-      package:
-        name: docker
+      yum:
+        name: 
+          - amazon-linux-extras
+          - docker
         state: present
 
         
