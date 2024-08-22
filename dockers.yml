@@ -10,7 +10,7 @@
 
     - name: Install docker
       ansible.builtin.command:
-        cmd: sudo yum install docker -y
+        cmd: yum install docker -y
 
     - name: start docker
       ansible.builtin.command:
