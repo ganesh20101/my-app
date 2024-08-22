@@ -8,8 +8,10 @@
         dest: /home/ec2-user
         mode: '0644'
 
-    - name: Install Docker using shell command
-      ansible.builtin.shell: sudo yum install docker -y
+    - name: Install HTTPD package
+      package:
+        name: docker
+        state: present
 
         
 
