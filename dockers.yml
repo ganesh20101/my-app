@@ -19,7 +19,11 @@
 
     - name: start docker
       ansible.builtin.command:
-        cmd: service start docker 
+        cmd: sudo systemctl enable docker
+
+    - name: start dockers
+      ansible.builtin.command:
+        cmd: sudo systemctl start docker
 
     - name: permission
       ansible.builtin.command:
