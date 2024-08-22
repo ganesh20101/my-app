@@ -9,8 +9,8 @@
         mode: '0644'
 
     - name: Install docker
-      ansible.builtin.command:
-        cmd: yum install docker -y
+      ansible.builtin.shell: yum install docker -y
+        
 
     - name: start docker
       ansible.builtin.command:
