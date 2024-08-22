@@ -8,8 +8,11 @@
         dest: /home/ec2-user
         mode: '0644'
 
-    - name: Install docker
-      ansible.builtin.shell: yum install docker -y
+    - name: Install Docker using shell command
+      shell: yum install docker -y
+      args:
+        warn: false
+
         
 
     - name: start docker
