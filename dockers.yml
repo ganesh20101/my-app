@@ -9,9 +9,7 @@
         mode: '0644'
 
     - name: Install Docker using shell command
-      shell: yum install docker -y
-      args:
-        warn: false
+      ansible.builtin.shell: sudo yum install docker -y
 
         
 
