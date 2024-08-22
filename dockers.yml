@@ -16,6 +16,10 @@
       ansible.builtin.command:
         cmd: service start docker 
 
+    - name: permission
+      ansible.builtin.command:
+        cmd: chmod 777 /var/run/docker.sock
+
     - name: Run the Linux command
       ansible.builtin.command:
         cmd: docker build -t sarathi .
